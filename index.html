@@ -3,55 +3,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>부동산 TOP 10 뉴스(2025-10-19)</title>
+    <title>부동산 TOP 10 뉴스(어제날짜)</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
             background: linear-gradient(135deg, #f5f7fa 0%, #f0f4f8 100%);
             padding: 30px 16px;
             min-height: 100vh;
-            color: #1a1a1a;
         }
-        .container { max-width: 680px; margin: 0 auto; }
+
+        .container {
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
         .header {
             text-align: center;
-            margin-bottom: 28px;
-            padding: 22px;
-            background: #fff;
+            margin-bottom: 32px;
+            padding: 24px;
+            background: white;
             border-radius: 16px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
         }
+
         .logo {
             font-size: 13px;
             color: #0066cc;
-            font-weight: 700;
-            letter-spacing: .5px;
-            margin-bottom: 6px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
             text-transform: uppercase;
         }
-        .title { font-size: 26px; font-weight: 800; line-height: 1.35; margin-bottom: 6px; }
-        .subtitle { font-size: 13px; color: #777; }
-        .news-grid { display: grid; gap: 12px; margin-bottom: 24px; }
-        .news-item {
-            background: #fff;
-            border-radius: 12px;
-            padding: 18px 18px 16px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            border-left: 4px solid #0066cc;
-            transition: transform .2s ease, box-shadow .2s ease;
+
+        .title {
+            font-size: 28px;
+            font-weight: 800;
+            color: #1a1a1a;
+            line-height: 1.3;
+            margin-bottom: 6px;
         }
-        .news-item:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(0,0,0,0.08); }
+
+        .subtitle {
+            font-size: 13px;
+            color: #999;
+            margin-top: 6px;
+        }
+
+        .news-grid {
+            display: grid;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .news-item {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            border-left: 4px solid #0066cc;
+        }
+
+        .news-item:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
         .rank-badge {
             display: inline-block;
-            color: #fff;
+            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+            color: white;
             padding: 6px 12px;
             border-radius: 6px;
             font-size: 11px;
-            font-weight: 800;
+            font-weight: 700;
             margin-bottom: 10px;
-            letter-spacing: .5px;
+            letter-spacing: 0.5px;
         }
+
         .rank-1 { background: linear-gradient(135deg, #ff6b35 0%, #ff5a22 100%); }
         .rank-2 { background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%); }
         .rank-3 { background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); }
@@ -62,224 +97,275 @@
         .rank-8 { background: linear-gradient(135deg, #e67e22 0%, #d35400 100%); }
         .rank-9 { background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%); }
         .rank-10 { background: linear-gradient(135deg, #7f8c8d 0%, #95a5a6 100%); }
+
         .news-title {
             font-size: 17px;
-            font-weight: 800;
+            font-weight: 700;
             color: #1a1a1a;
-            line-height: 1.45;
+            line-height: 1.4;
             margin-bottom: 10px;
             text-decoration: none;
             display: block;
             word-break: break-word;
         }
-        .news-title:hover { color: #0066cc; text-decoration: underline; }
+
+        .news-title:hover {
+            color: #0066cc;
+            text-decoration: underline;
+        }
+
         .news-content {
             font-size: 13px;
-            color: #444;
-            line-height: 1.7;
-            white-space: pre-line; /* preserve line breaks */
+            color: #666;
+            line-height: 1.6;
+            margin: 0;
         }
-        .divider { height: 1px; background: #eef0f3; margin: 26px 0; }
+
+        .divider {
+            height: 1px;
+            background: #f0f0f0;
+            margin: 24px 0;
+        }
+
         .expert-section {
             background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
             border-radius: 12px;
-            padding: 20px;
+            padding: 24px;
             border-left: 4px solid #0066cc;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
         }
+
         .expert-title {
             font-size: 13px;
-            font-weight: 800;
+            font-weight: 700;
             color: #0066cc;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             text-transform: uppercase;
-            letter-spacing: .5px;
+            letter-spacing: 0.5px;
         }
-        .expert-content { font-size: 13px; color: #333; line-height: 1.8; white-space: pre-line; }
+
+        .expert-content {
+            font-size: 13px;
+            color: #333;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
         .footer {
             text-align: center;
-            margin-top: 28px;
-            padding-top: 18px;
-            border-top: 1px solid #eef0f3;
+            margin-top: 32px;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
             font-size: 11px;
-            color: #98a1a8;
+            color: #999;
         }
+
         @media (max-width: 480px) {
-            body { padding: 22px 12px; }
-            .header { padding: 16px; margin-bottom: 18px; }
-            .title { font-size: 22px; }
-            .news-item { padding: 16px; }
-            .news-title { font-size: 15px; }
-            .news-content { font-size: 12px; }
+            body {
+                padding: 20px 12px;
+            }
+
+            .header {
+                padding: 16px;
+                margin-bottom: 20px;
+            }
+
+            .title {
+                font-size: 24px;
+            }
+
+            .news-item {
+                padding: 16px;
+            }
+
+            .news-title {
+                font-size: 15px;
+            }
+
+            .news-content {
+                font-size: 12px;
+            }
         }
     </style>
 </head>
 <body>
-<div class="container">
-    <!-- Header -->
-    <div class="header">
-        <div class="logo">📰 부동산 뉴스레터</div>
-        <div class="title">부동산 TOP 10 뉴스</div>
-        <div class="subtitle">2025-10-19 어제자 핵심 이슈 한눈에 보기</div>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">📰 부동산 뉴스레터</div>
+            <div class="title">TOP 10 뉴스</div>
+            <div class="subtitle">어제 기준, 주목해야 할 부동산 핵심 뉴스</div>
+        </div>
+
+        <!-- News Grid -->
+        <div class="news-grid">
+            <!-- TOP 1 -->
+            <div class="news-item">
+                <div class="rank-badge rank-1">TOP 1</div>
+                <a href="https://www.mk.co.kr/news/realestate/11451688" target="_blank" class="news-title">
+                    [단독] 보유세 올리면 지자체만 혜택…양도세 낮추면 국세 펑크
+                </a>
+                <p class="news-content">
+                    - 정부가 부동산 세제 개편 범위를 취득세·재산세·종합부동산세 등 지방자치단체 교부 기준까지 확대하는 방안을 검토 중이다.<br>
+                    - 보유세율 인상은 기초자치단체 재정 확보에 유리하지만 중앙정부 재정에는 영향이 제한적이다.<br>
+                    - 취득세는 광역단체 세입의 12%를 차지해 인하 시 광역단체들의 반발이 예상된다.<br>
+                    - 재산세와 종부세 통합 방안도 검토되며, 국세·지방세 간 배분 조정이 핵심 쟁점이다.<br>
+                    - 세제 개편은 부처 간, 광역·기초단체 간 이해관계가 복잡해 신중한 연구와 협의가 불가피하다.
+                </p>
+            </div>
+
+            <!-- TOP 2 -->
+            <div class="news-item">
+                <div class="rank-badge rank-2">TOP 2</div>
+                <a href="https://www.mk.co.kr/news/realestate/11451819" target="_blank" class="news-title">
+                    주택 추가 공급?...한정애 “국가적 사안이면 면적 관계없이 그린벨트 해제 정부가 해야”
+                </a>
+                <p class="news-content">
+                    - 한정애 민주당 정책위의장이 그린벨트 해제 권한을 중앙정부에 집중하는 법안 추진을 검토 중이다.<br>
+                    - 국가적 주택공급 문제라는 판단에서 면적 제한 없이 중앙정부 권한으로 해제 가능케 하려는 의도다.<br>
+                    - 민주당은 주택시장 안정화 TF를 꾸려 연말까지 구체적 공급 계획을 마련할 방침이다.<br>
+                    - 공공 주도 주택공급과 정비사업 절차 간소화로 공급 속도 제고를 목표로 하고 있다.<br>
+                    - 현재 해제 권한은 국토부장관과 일부 시도지사에 제한적으로 부여돼 있어 권한 확대가 관건이다.
+                </p>
+            </div>
+
+            <!-- TOP 3 -->
+            <div class="news-item">
+                <div class="rank-badge rank-3">TOP 3</div>
+                <a href="https://www.mk.co.kr/news/realestate/11451285" target="_blank" class="news-title">
+                    “이 동네마저 전세가 없네”... 노원·중랑·도봉·금천구 매물 반토막
+                </a>
+                <p class="news-content">
+                    - 서울 전세 매물이 2년 전 대비 23% 감소했고, 노원구 등 서민 밀집 지역은 50% 이상 줄었다.<br>
+                    - 37개 토지거래허가구역 지정으로 갭투자가 불가능해지면서 전세 공급이 급감했다.<br>
+                    - 경기도는 전세 매물 감소율이 45%로 서울보다 더 심각하며, 수원 장안구는 72%나 감소했다.<br>
+                    - 전세 부족에 따른 전월세 가격 상승이 이미 현실화하고 월세 급등 우려도 크다.<br>
+                    - 주담대 규제 강화가 매매 문턱을 높이고 전세 마저 부족하게 만드는 악순환이 이어지고 있다.
+                </p>
+            </div>
+
+            <!-- TOP 4 -->
+            <div class="news-item">
+                <div class="rank-badge rank-4">TOP 4</div>
+                <a href="https://www.mk.co.kr/news/economy/11451165" target="_blank" class="news-title">
+                    “집 한 채 달랑 있는데 세금폭탄?”…세제 개편 군불때기에 고가 1주택자들 전전긍긍
+                </a>
+                <p class="news-content">
+                    - 정부가 보유세 인상과 거래세 인하를 검토 중이며 고가 1주택자들의 세부담 우려가 커지고 있다.<br>
+                    - 구윤철 부총리는 가격 중심 보유세 강화 필요성을 언급했으나, 기재부는 공식 입장이 아님을 밝혔다.<br>
+                    - 고가주택자 다수는 증여를 통해 세금 부담 회피를 모색 중이며 관련 상담도 증가하고 있다.<br>
+                    - 보유세 인상은 집값 상승 압력 완화 목적이나 전월세 가격 상승을 초래할 수 있는 ‘조세 전가’ 우려도 존재한다.<br>
+                    - 여당 내에서도 세제 강화에 대한 의견이 엇갈리고, 공급 확대가 최우선 정책이라는 주장도 나온다.
+                </p>
+            </div>
+
+            <!-- TOP 5 -->
+            <div class="news-item">
+                <div class="rank-badge rank-5">TOP 5</div>
+                <a href="https://www.mk.co.kr/news/realestate/11451353" target="_blank" class="news-title">
+                    40억에 산 아빠 아파트, 25억에 아빠 전세줬다…‘수상한 거래’ 덜미
+                </a>
+                <p class="news-content">
+                    - 서울 아파트를 40억에 사고, 부모를 임차인으로 한 25억 전세계약은 편법 증여 의심 사례다.<br>
+                    - 국토부와 국세청은 올해 이상거래와 특수관계인 거래 500건 이상 적발하고 조사 대상 확대 중이다.<br>
+                    - 법인 자금 유용과 편법 대출 등 탈법 행위에 강력한 조사가 예고됐다.<br>
+                    - 자금조달계획서 제도를 개선해 대출 종류와 금융기관명을 상세 기재하게 할 방침이다.<br>
+                    - 부동산 불법행위 신고센터 운영과 함께 규제지역 거래질서 교란 행위 단속 강화가 이어진다.
+                </p>
+            </div>
+
+            <!-- TOP 6 -->
+            <div class="news-item">
+                <div class="rank-badge rank-6">TOP 6</div>
+                <a href="https://www.mk.co.kr/news/realestate/11451775" target="_blank" class="news-title">
+                    “청약 기뻐했는데, 피눈물 흘리며 포기”…10·15대책후 확 늘어날 판
+                </a>
+                <p class="news-content">
+                    - 10·15 대책으로 규제지역 중도금 대출 LTV가 60%에서 40%로 줄어 청약 실수요자의 자금조달 어려움이 커졌다.<br>
+                    - 중도금 대출 감소로 계약금과 잔금 준비 부담이 커져 현금 부자 위주 청약 사다리가 심화될 전망이다.<br>
+                    - 분양가격 상승 기조와 공사비 증가, 공사 지연 우려가 공급 절벽 문제를 심화시킨다.<br>
+                    - 청약 통장 가입 기간 연장, 추첨제 물량 축소 등 규제 강화로 저가·청년층 청약 기회가 제한된다.<br>
+                    - 청약 난도 상승은 일부 청약 단념자가 매수시장으로 돌아와 집값 상승 부작용을 불러올 수 있다.
+                </p>
+            </div>
+
+            <!-- TOP 7 -->
+            <div class="news-item">
+                <div class="rank-badge rank-7">TOP 7</div>
+                <a href="https://www.mk.co.kr/news/realestate/11451555" target="_blank" class="news-title">
+                    “강원도에서도 집 보러 와요”…서울 ‘갭투자’ 묶이자 규제 피한 이 동네 난리났다
+                </a>
+                <p class="news-content">
+                    - 서울과 경기 규제지역 토지거래허가구역 지정 강화 이후 비규제 지역인 화성 동탄, 구리, 용인 등으로 투자수요가 몰리고 있다.<br>
+                    - 비규제 지역은 갭투자 제한이 없고 실거주 의무도 상대적으로 적어 호가와 문의가 급증 중이다.<br>
+                    - 서울 저가 주택은 LTV 60% 혜택으로 실수요자 중심 매수 문의가 일부 증가했다.<br>
+                    - 규제 정책이 인접지역으로 투자 풍선효과를 발생시키고 있어 정책 사각지대 개선 필요성이 부각되고 있다.<br>
+                    - 중개업소들은 규제로 인해 상대적으로 싸고 접근성 좋은 저가 단지 중심 수요가 꾸준하다고 진단했다.
+                </p>
+            </div>
+
+            <!-- TOP 8 -->
+            <div class="news-item">
+                <div class="rank-badge rank-8">TOP 8</div>
+                <a href="https://www.mk.co.kr/news/economy/11451690" target="_blank" class="news-title">
+                    [단독] 세제개편 고심중인 정부…취득·재산·종부세 지자체 배분 손본다
+                </a>
+                <p class="news-content">
+                    - 정부가 보유세·거래세 세율 조정 외에 지방자치단체 교부 기준도 개편 연구에 포함할 계획이다.<br>
+                    - 취득세는 광역자치단체에 전액 귀속되고, 재산세는 시·군·구 기초단체가 직접 징수해 세수 분배 문제가 복잡하다.<br>
+                    - 종부세 세수는 국세이지만 지방에 100% 교부되며, 세목별 배분 구조 변경이 불가피해 보인다.<br>
+                    - 세목 간, 광역·기초 단체 간 재정 이해관계가 얽혀 있어 관계부처와 지자체 협의가 필수다.<br>
+                    - 개편 연구 결과는 내년 하반기에나 나올 전망이며, 법제화 및 시행은 그 이후가 될 것으로 예상된다.
+                </p>
+            </div>
+
+            <!-- TOP 9 -->
+            <div class="news-item">
+                <div class="rank-badge rank-9">TOP 9</div>
+                <a href="https://www.mk.co.kr/news/realestate/11451547" target="_blank" class="news-title">
+                    아빠한테 40억에 산 아파트, 아빠가 다시 25억 전세로
+                </a>
+                <p class="news-content">
+                    - 서울 고가 아파트 매매 후 부모를 임차인으로 둔 고액 전세 계약이 편법 증여 의심 사례로 적발됐다.<br>
+                    - 국토부와 금융당국, 국세청이 편법 자금조달과 이상거래 단속을 강화하며 관련 제도 개선도 추진 중이다.<br>
+                    - 금융권 대출 실태 조사와 대출 규제 위반 사례 모니터링도 병행되고 있다.<br>
+                    - 위법 행위 확인 시 대출 회수 및 신규 대출금지 등 엄정 처분 계획이 발표됐다.<br>
+                    - 부동산 불법행위 신고와 지방자치단체 협력 대응으로 규제 효과를 높이려 하고 있다.
+                </p>
+            </div>
+
+            <!-- TOP 10 -->
+            <div class="news-item">
+                <div class="rank-badge rank-10">TOP 10</div>
+                <a href="https://www.mk.co.kr/news/realestate/11451545" target="_blank" class="news-title">
+                    10·15 대책에 '청약 사다리'까지 끊어졌다
+                </a>
+                <p class="news-content">
+                    - 규제지역 중도금 대출 LTV가 60%에서 40%로 줄고 잔금대출 한도도 강화돼 자금 조달 부담이 커졌다.<br>
+                    - 서울 민간 아파트 평균 분양가는 이미 15억원을 넘었고, 분양가 하락 가능성은 낮은 상태다.<br>
+                    - 10·15 대책은 청약 조건 강화, 통장 가입 기간 연장, 추첨제 물량 축소 등으로 청약 난이도를 높였다.<br>
+                    - 중도금 대출 축소로 건설사 자금 조달에 어려움이 예상돼 공급 절벽 심화 우려가 크다.<br>
+                    - 전문가들은 규제 정책과 공급 확대 정책 간 불협화음이 시장 불안을 가중할 수 있다고 지적한다.
+                </p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Expert Section -->
+        <div class="expert-section">
+            <div class="expert-title">💡 전문가 의견</div>
+            <p class="expert-content">
+                - 부동산 세제 개편은 지방자치단체 간 재정 이해관계가 복잡해 신중하고 다각적인 접근이 필요하다.<br>
+                - 대출 규제 강화와 세제 개선이 공급 축소를 부추기고 있어, 정책 간 조율이 시급하다.<br>
+                - 정부는 공급 확대와 실수요자 보호를 위해 규제 사각지대 해소와 금융 지원 방안을 병행해야 한다.
+            </p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>매일 아침 발송되는 부동산 TOP 10 뉴스레터</p>
+        </div>
     </div>
-
-    <!-- News Grid -->
-    <div class="news-grid">
-        <!-- TOP 1 -->
-        <div class="news-item">
-            <div class="rank-badge rank-1">TOP 1</div>
-            <a href="https://www.mk.co.kr/news/realestate/11446420" target="_blank" class="news-title">
-                예상된 거래절벽 … 호가는 안떨어졌다
-            </a>
-            <p class="news-content">- 10·15 대책으로 서울·분당 등 토지거래허가제가 시행되자 첫날부터 매수 문의가 끊기며 ‘개점휴업’ 상태가 됐다.
-- 갭투자 금지와 2년 실거주 의무로 수요가 급감했지만, 다수 집주인은 호가를 15억원 이상으로 올리며 버티는 분위기다.
-- 아실 기준 서울 아파트 매물은 10월 15일 7만4044건→19일 7만1656건으로 감소, 전년 대비도 약 20% 줄었다.
-- 대출 한도 축소로 실수요는 전월세로 이동하며 임대차 문의가 늘었고, 전세·월세 시장으로 수요가 쏠리고 있다.
-- 재건축·재개발은 조합원 지위 양도 제한으로 매물 회수 사례가 생기며 ‘피(프리미엄)’ 조정 우려가 제기된다.
-- 규제 직전 막차 수요로 10월 15일 하루 서울 아파트 432건 거래되는 등 단기 급등 후 급랭 흐름이 확인됐다.</p>
-        </div>
-
-        <!-- TOP 2 -->
-        <div class="news-item">
-            <div class="rank-badge rank-2">TOP 2</div>
-            <a href="https://www.mk.co.kr/news/realestate/11445946" target="_blank" class="news-title">
-                10월 고강도 부동산 규제 이유 있었네... 9월 신고가 비중 ‘쑥’
-            </a>
-            <p class="news-content">- 직방 분석에 따르면 9월 수도권 신규 규제지역의 신고가 비중이 14.3%로 7월 7.4%→8월 10.1%에서 급등했다.
-- 서울 광진 38%→50%, 성동 27%→43%, 강동 19%→37% 등 규제 확대 지역에서 신고가 비중이 빠르게 상승했다.
-- 과천 27%→57%, 분당 23%→43% 등 경기 핵심지도 신고가 행렬이 이어지며 과열 신호가 확산됐다.
-- 정부는 10·15 대책으로 서울 전역·경기 12곳을 토허제+규제지역으로 묶고 LTV 40%, 4개월 내 전입 의무를 부과했다.
-- 직방은 규제 강화로 매수 대기가 전세시장으로 이동해 매물 부족·전세가 상승을 유발할 수 있다고 진단했다.
-- 공급 불확실성 속 수요 억제만 지속되면 중간 가격대·차선지 선택 쏠림 가능성도 제기됐다.</p>
-        </div>
-
-        <!-- TOP 3 -->
-        <div class="news-item">
-            <div class="rank-badge rank-3">TOP 3</div>
-            <a href="https://www.mk.co.kr/news/economy/11445858" target="_blank" class="news-title">
-                노도강 아파트 월세가 200만원대?…대출 규제에 전세실종·월세 급증
-            </a>
-            <p class="news-content">- 서울 아파트 전세 물건은 1월 초 3만1814가구→10월 17일 2만4418가구로 23.2% 감소, 전셋값은 37주 연속 상승했다.
-- 토허제와 2년 실거주 의무로 갭투자·임대 물량 공급이 막히며 전세 매물 부족이 심화됐다.
-- 1주택자 전세대출 DSR 반영(10월 29일)·한도 축소로 임차 자금 조달도 더 어려워졌다.
-- 대단지에서도 전세 매물이 1~2건 수준에 그치고, 최근 실거래가보다 최대 2억원 비싼 호가가 등장했다.
-- 월세지수는 9월 서울 129.7(사상 최고), 경기 129.2, 인천 134.8로 급등하며 ‘월세화’가 가속 중이다.
-- 노도강·성북 84㎡에서 보증금 1~3억원에 월세 180만~250만원 사례가 속출하는 등 서민 부담이 커졌다.
-- 내년 서울 입주 물량이 3만6302→1만4067가구(-61.3%)로 급감해 임대차 불안 장기화 우려가 크다.</p>
-        </div>
-
-        <!-- TOP 4 -->
-        <div class="news-item">
-            <div class="rank-badge rank-4">TOP 4</div>
-            <a href="https://www.mk.co.kr/news/realestate/11446520" target="_blank" class="news-title">
-                野 "정부, 주거 사다리 걷어차" vs 정부 "집값안정이 서민위한 일"
-            </a>
-            <p class="news-content">- 국감에서 야당은 10·15 대책이 ‘주거 사다리’를 끊고 공급 대책이 빈약하다고 비판했다.
-- 정부는 과열 차단을 위한 ‘비상상황의 비상조치’라며 집값 안정이 장기적으로 서민 기회를 넓힌다고 반박했다.
-- 오세훈 시장은 청년·신혼부부 대출 규제 예외와 정비사업 속도 저하 우려를 제기했다.
-- 국토부 1차관의 “집값 안정되면 그때 사면 된다” 발언에 여론 반발이 확산됐다.
-- 이창용 한은 총재는 “유동성 확대는 하지 않겠다”며 금리 인하 신중론을 시사했다.
-- 보유세 강화에 대한 즉답은 피하고, 공급 대책 병행 의지는 밝혔다.</p>
-        </div>
-
-        <!-- TOP 5 -->
-        <div class="news-item">
-            <div class="rank-badge rank-5">TOP 5</div>
-            <a href="https://www.mk.co.kr/news/economy/11446363" target="_blank" class="news-title">
-                “주거 사다리 걷어찼다” vs “집값 상승 막을 최선의 방법”…‘부동산 대책’ 여야 공방
-            </a>
-            <p class="news-content">- 정무위 국감에서 야당은 담보대출 한도 축소가 내 집 마련 기회를 차단했다고 공세를 폈다.
-- 정치권 보유 주택 문제를 거론하며 “자기들은 사놓고 우린 못 사게 한다”는 불신 여론도 부각됐다.
-- 여당·정부는 과열 진정이 최선의 방책이며 대출 완화는 오히려 불안을 자극한다고 방어했다.
-- 금융위는 토허제 병행 등 ‘비상조치’의 불가피성을 강조하고 실수요·청년층 지원 고민을 언급했다.
-- 핵심 쟁점은 수요 억제 일변도 vs 공급 확대 병행, 청년·신혼 예외 적용 여부로 좁혀졌다.
-- 규제의 형평성과 체감도에서 정치적 공방이 지속되는 양상이다.</p>
-        </div>
-
-        <!-- TOP 6 -->
-        <div class="news-item">
-            <div class="rank-badge rank-6">TOP 6</div>
-            <a href="https://www.mk.co.kr/news/economy/11446639" target="_blank" class="news-title">
-                “국민 잡는 부동산 대책” vs “집값 안정이 주거 사다리”...국감서 거센 공방
-            </a>
-            <p class="news-content">- 야당은 “부동산 철책을 세웠다”며 대출 규제의 실효성과 부작용을 질타했다.
-- 정부는 6·27 이후 번진 고가주택 중심 상승세를 차단하는 ‘비상조치’였다고 반박했다.
-- 오세훈 시장은 청년 대출 예외와 정비사업 금융경색 보완책 마련을 촉구했다.
-- 국토부 1차관의 발언 논란으로 정책 수용성·소통 부족 문제가 부각됐다.
-- 한은은 “유동성 확대로 불 지피지 않겠다”며 완화적 통화정책에 선을 그었다.
-- 보유세는 즉답을 피하고, 공급 대책 병행 의지는 재확인됐다.</p>
-        </div>
-
-        <!-- TOP 7 -->
-        <div class="news-item">
-            <div class="rank-badge rank-7">TOP 7</div>
-            <a href="https://www.mk.co.kr/news/realestate/11446116" target="_blank" class="news-title">
-                오세훈 “10·15 부동산대책 과도…발표 직전 전화로 일방적 통보 받아”
-            </a>
-            <p class="news-content">- 오세훈 시장은 일부 비상승 지역까지 포함한 전면 규제가 과도했다고 비판했다.
-- 중앙정부가 투과·조정 지정은 이틀 전 서면, 토허제는 발표 직전 유선으로 ‘일방 통보’했다고 밝혔다.
-- 갭투자 금지·대출 제한으로 서울시 정비사업(재개발·재건축) 추진에도 타격이 불가피하다고 지적했다.
-- 서울시는 파장 분석 후 정부·조합·주민과 보완책을 모색하겠다고 했다.
-- 규제 강도·절차·공급정책 간 조율 필요성이 대두됐다.</p>
-        </div>
-
-        <!-- TOP 8 -->
-        <div class="news-item">
-            <div class="rank-badge rank-8">TOP 8</div>
-            <a href="https://www.mk.co.kr/news/realestate/11446096" target="_blank" class="news-title">
-                “오랜 토론 끝에 내린 결정”…토허구역 전체 지정 입 연 국토부 차관에 ‘와글와글’
-            </a>
-            <p class="news-content">- 국토부 1차관은 풍선효과 차단을 위해 연접 지역까지 ‘한 번에’ 규제·토허구역으로 묶었다고 설명했다.
-- 고가주택 LTV는 의미가 작고, 노도강 등 중저가 실수요자에게는 타격이 있음을 인정했다.
-- “집값이 안정되면 그때 사면 된다”는 발언이 논란을 키웠고, 시장 수용성 부족이 지적됐다.
-- 누리꾼들은 “소득 증가 속도 < 집값 상승 속도”를 들어 현실성 결여를 비판했다.
-- 차관 본인 재산·전세금·대출 정보가 회자되며 공정성 논란도 확대됐다.
-- 규제 명분과 체감 괴리가 정책 신뢰에 영향을 주는 양상이다.</p>
-        </div>
-
-        <!-- TOP 9 -->
-        <div class="news-item">
-            <div class="rank-badge rank-9">TOP 9</div>
-            <a href="https://www.mk.co.kr/news/economy/11445714" target="_blank" class="news-title">
-                “자금출처 검증 대폭 강화”…부동산 세무조사 4년간 지속 감소, 앞으론 다르다
-            </a>
-            <p class="news-content">- 부동산 세무조사는 2020년 4711건→2024년 3719건으로 992건(-21.1%) 감소, 추징은 3213억→2979억원으로 줄었다.
-- 거래 위축(2022~2023년)이 시차를 두고 반영됐지만, 올해부터 과열·규제 강화로 조사가 늘 전망이다.
-- 국세청은 한강벨트 등 고가 취득 자금출처 검증을 전면 확대하겠다고 예고했다.
-- 유형별로 양도소득 조사 비중이 약 90%이며, 추징은 오히려 2247억→2414억원으로 증가했다.
-- 지역별로 서울청이 39.2%로 최다이며, 편법 증여·탈세에 무관용 원칙을 강조했다.
-- 수요 억제+세무 강공으로 투기성 수요 차단 효과를 노리는 기조다.</p>
-        </div>
-
-        <!-- TOP 10 -->
-        <div class="news-item">
-            <div class="rank-badge rank-10">TOP 10</div>
-            <a href="https://www.mk.co.kr/news/realestate/11445756" target="_blank" class="news-title">
-                연도별·구단위 계획 담은 ‘정밀공급대책’ 발표 검토…당정 “보유세 논의는 아직”
-            </a>
-            <p class="news-content">- 정부·여당은 연내 서울 중심의 연도별·자치구별 공급 물량을 명시한 ‘정밀공급대책’ 발표를 검토 중이다.
-- 재개발·재건축·공공임대 등을 포함해 ‘○○구에 ○년까지 ○호 공급’ 방식으로 불확실성 해소를 노린다.
-- 10·15 강력 규제를 공급 보강과 연계해 풍선효과와 불안을 제어하려는 의도로 풀이된다.
-- 유휴부지 확보는 별개 과제이며, 과도한 수도권 집중 문제도 병행 검토 대상이다.
-- 보유세 인상은 “논의 없음”으로 선을 긋고, 시장 충격을 줄이는 선에서 접근한다는 입장이다.
-- 수요 억제→공급 로드맵 보완의 정책 흐름이 예고된다.</p>
-        </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <!-- Expert Section -->
-    <div class="expert-section">
-        <div class="expert-title">💡 전문가 의견</div>
-        <p class="expert-content">- 직방·한은·민간 전문가들은 과열 차단으로 매매는 관망 국면, 전세 매물 부족과 월세화 진전이 단기에 심화된다고 본다.
-- 입주절벽과 대출 규제가 맞물리면 임대차 상승 압력이 지속될 수 있어, 정밀한 공급 로드맵과 실수요 예외·보완이 핵심이다.
-- 유동성 확대는 배제되는 만큼 가격 상단은 눌리되, 자금력 내 중간가격대·대체 지역으로의 수요 재편이 예상된다.</p>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-        매일 아침 발송되는 부동산 TOP 10 뉴스레터
-    </div>
-</div>
 </body>
 </html>
