@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부동산 TOP 10 뉴스(어제날짜)</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #f0f4f8 100%);
+            padding: 30px 16px;
+            min-height: 100vh;
+            color: #1a1a1a;
+        }
+        .container { max-width: 640px; margin: 0 auto; }
+        .header {
+            text-align: center;
+            margin-bottom: 28px;
+            padding: 22px 18px;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        .logo { font-size: 13px; color: #0066cc; font-weight: 700; letter-spacing: .5px; margin-bottom: 8px; text-transform: uppercase; }
+        .title { font-size: 26px; font-weight: 800; line-height: 1.3; margin-bottom: 6px; }
+        .subtitle { font-size: 13px; color: #888; }
+        .news-grid { display: grid; gap: 12px; margin-bottom: 24px; }
+        .news-item {
+            background: #fff; border-radius: 12px; padding: 18px 18px 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            transition: all .25s ease; border-left: 4px solid #0066cc;
+        }
+        .news-item:hover { box-shadow: 0 8px 16px rgba(0,0,0,0.08); transform: translateY(-2px); }
+        .rank-badge {
+            display: inline-block; color: #fff; padding: 6px 12px; border-radius: 6px;
+            font-size: 11px; font-weight: 800; margin-bottom: 10px; letter-spacing: .5px;
+            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+        }
+        .rank-1 { background: linear-gradient(135deg, #ff6b35 0%, #ff5a22 100%); }
+        .rank-2 { background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%); }
+        .rank-3 { background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); }
+        .rank-4 { background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); }
+        .rank-5 { background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); }
+        .rank-6 { background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%); }
+        .rank-7 { background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); }
+        .rank-8 { background: linear-gradient(135deg, #e67e22 0%, #d35400 100%); }
+        .rank-9 { background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%); }
+        .rank-10 { background: linear-gradient(135deg, #7f8c8d 0%, #95a5a6 100%); }
+        .news-title {
+            font-size: 17px; font-weight: 800; color: #1a1a1a; line-height: 1.4;
+            text-decoration: none; display: block; margin-bottom: 10px; word-break: keep-all;
+        }
+        .news-title:hover { color: #0066cc; text-decoration: underline; }
+        .news-content { font-size: 13px; color: #444; line-height: 1.7; word-break: keep-all; }
+        .news-content br { line-height: 180%; }
+        .divider { height: 1px; background: #eff1f4; margin: 22px 0 26px; }
+        .expert-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 12px; padding: 20px; border-left: 4px solid #0066cc;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        .expert-title { font-size: 13px; font-weight: 800; color: #0066cc; margin-bottom: 10px; letter-spacing: .5px; }
+        .expert-content { font-size: 13px; color: #333; line-height: 1.8; font-weight: 500; }
+        .footer { text-align: center; margin-top: 30px; padding-top: 18px; border-top: 1px solid #eff1f4; font-size: 11px; color: #999; }
+        @media (max-width: 480px) {
+            body { padding: 22px 12px; }
+            .header { padding: 16px; margin-bottom: 18px; }
+            .title { font-size: 22px; }
+            .news-item { padding: 16px; }
+            .news-title { font-size: 15px; }
+            .news-content { font-size: 12.5px; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">📰 부동산 뉴스레터</div>
+        <div class="title">부동산 TOP 10 뉴스(어제날짜)</div>
+        <div class="subtitle">오늘의 핵심 부동산 뉴스 요약</div>
+    </div>
+
+    <!-- News Grid -->
+    <div class="news-grid">
+        <!-- TOP 1 -->
+        <div class="news-item">
+            <div class="rank-badge rank-1">TOP 1</div>
+            <a href="https://www.mk.co.kr/news/realestate/11454619" target="_blank" rel="noopener noreferrer" class="news-title">
+                “재건축 지원 총력”··· HUG, 연간 100조원 규모 공적 보증
+            </a>
+            <div class="news-content">
+                - 국토부가 HUG 보증 요건·한도를 완화해 연간 100조원 공적 보증을 공급한다.<br>
+                - 9·7 대책 후속으로 민간 공급여건을 개선해 최대 47.6만호 정비사업 자금조달을 지원한다.<br>
+                - PF 보증 특례를 내년 6월까지 1년 연장하고, 보증한도를 일반분양 50%→70%, 도시형·오피스텔 70%→80%로 확대한다.<br>
+                - 시공사 시공순위 700위 제한을 폐지하고, 분양부진·공사비 상승 사업장에 총사업비 70% 내 추가 PF 보증을 지원한다.<br>
+                - 브릿지론 대환 범위를 ‘원금+2년 이자’→‘원금+5년 이자’로 확대해 이자 부담을 낮춘다.<br>
+                - 초기사업비 대환대상에 금융기관 브릿지론을 추가하고, 착공 전에도 고금리 자금을 3~4%대 본사업비로 전환한다.<br>
+                - 신축 매입임대 특약보증 한도를 매입가의 85%→90%로 상향해 2년간 7만호 공급을 견인한다.
+            </div>
+        </div>
+
+        <!-- TOP 2 -->
+        <div class="news-item">
+            <div class="rank-badge rank-2">TOP 2</div>
+            <a href="https://www.mk.co.kr/news/realestate/11454542" target="_blank" rel="noopener noreferrer" class="news-title">
+                “지금은 사고팔 때 아니야”…10·15 대책 후 서울 아파트 거래량 80% ‘뚝’
+            </a>
+            <div class="news-content">
+                - 10·15 대책 이후 10/16~28 서울 아파트 매매 713건으로 직전 13일 대비 79.3% 급감했다.<br>
+                - 매물도 7만4044건→6만4845건으로 12.5% 감소하며 급격한 ‘거래 한파’가 나타났다.<br>
+                - 토지거래허가구역 지정과 LTV 70%→40% 축소로 전세 끼고 매도·갈아타기 수요가 위축됐다.<br>
+                - 규제지역에선 사실상 현금 부자만 매수 가능한 구조로 전문가들은 한동안 한파 지속을 전망한다.<br>
+                - 반면 임대차 시장은 전월세 물건이 1.3% 증가했고, 전세 0.4%·월세 2.4% 늘었다.<br>
+                - 11월 7242가구, 12월 4583가구 등 대규모 입주가 예정돼 임대공급은 늘 전망이다.
+            </div>
+        </div>
+
+        <!-- TOP 3 -->
+        <div class="news-item">
+            <div class="rank-badge rank-3">TOP 3</div>
+            <a href="https://www.mk.co.kr/news/realestate/11454834" target="_blank" rel="noopener noreferrer" class="news-title">
+                HUG 年 100조 보증 … 주택건설 자금 지원
+            </a>
+            <div class="news-content">
+                - 정부가 HUG 보증을 연 100조원 수준으로 확대해 정비사업 47만6000가구 자금조달을 지원한다.<br>
+                - PF 보증 특례를 연장하고, 일반분양·도시형·오피스텔의 보증한도를 각각 70%, 80%로 높인다.<br>
+                - 시공순위 700위 제한을 폐지하고, 분양부진 사업장엔 총사업비 70% 내 공사비 추가 보증을 제공한다.<br>
+                - 브릿지론 대환은 ‘원금+5년 이자’까지 확대해 착공 전 고금리 자금을 신속히 낮춘다.<br>
+                - 본사업비 보증의 대환대상에 ‘금융기관 브릿지 대출금’을 추가해 초기자금 구조를 개선한다.
+            </div>
+        </div>
+
+        <!-- TOP 4 -->
+        <div class="news-item">
+            <div class="rank-badge rank-4">TOP 4</div>
+            <a href="https://www.mk.co.kr/news/realestate/11454835" target="_blank" rel="noopener noreferrer" class="news-title">
+                장위뉴타운 공급전쟁 … 공공·민간 둘다 뛰어들었다
+            </a>
+            <div class="news-content">
+                - 성북 장위뉴타운에서 국토부(공공 주도)와 서울시(민간 주도)가 상반된 방식으로 공급 가속에 나섰다.<br>
+                - 도심복합 ‘시즌2’ 첫 수혜지 장위12구역은 용적률 300%→최대 320%, 1386가구→1457가구 확대가 추진된다.<br>
+                - 서울시가 지원하는 장위14구역은 용적률 211%→263%, 25층 2439가구→최고 39층 2822가구로 상향된다.<br>
+                - 11/1 조합총회에서 용적률 상향안 vs 기존 유지안 표결이 예정돼 주민 수용성이 관건이다.<br>
+                - 장위13구역은 신속통합기획, 15구역은 현대건설 단독 입찰 후 내달 총회 확정 절차에 들어갔다.<br>
+                - 인근 빌라값은 2021년 대비 1억 이상 하락했고, 12구역은 용적률 상향으로 가구당 분담금 약 4000만원 감소했다.<br>
+                - 시장은 공공 성과 부재·조합 내분 리스크와 개선된 사업성의 균형 속 선택을 앞두고 있다.
+            </div>
+        </div>
+
+        <!-- TOP 5 -->
+        <div class="news-item">
+            <div class="rank-badge rank-5">TOP 5</div>
+            <a href="https://www.mk.co.kr/news/realestate/11454806" target="_blank" rel="noopener noreferrer" class="news-title">
+                “이사 가야 하는데 갈 곳이 없어요”…토허구역 확대 후 서울 전·월세 대란
+            </a>
+            <div class="news-content">
+                - 10/20~26 서울 전·월세 거래에서 갱신 비중이 50.2%로 올해 처음 신규(49.8%)를 넘어섰다.<br>
+                - 서울 전역 토지거래허가구역 지정과 6·27 대출규제로 임대공급이 줄며 ‘갱신 대세’로 급변했다.<br>
+                - 갱신 중 갱신청구권 미사용 600건 중 70.7%가 보증금을 인상했고, 동결 25.0%, 인하 4.3%에 그쳤다.<br>
+                - 신규 토허지역에선 전세가가 수억 상승해 트리마제 84㎡는 15.5억→18.5억, 고덕그라시움 8.1억→10.1억으로 뛰었다.<br>
+                - 공덕파크자이 84㎡도 9.8억→11.7억 등 2억 내외 인상 사례가 잇달았다.<br>
+                - 전·월세 불안이 매매시장으로 전이될 수 있고, 전셋값 1%↑ 시 매매가 0.65%↑(국토연구원) 상관성이 지적된다.
+            </div>
+        </div>
+
+        <!-- TOP 6 -->
+        <div class="news-item">
+            <div class="rank-badge rank-6">TOP 6</div>
+            <a href="https://www.mk.co.kr/news/realestate/11454681" target="_blank" rel="noopener noreferrer" class="news-title">
+                “입지·상품·혜택 3박자”…HDC현대산업개발, ‘상봉 센트럴 아이파크’ 공급
+            </a>
+            <div class="news-content">
+                - 10.15 대책 여파로 시장이 위축됐지만 과거 6.17 대책 사례처럼 단기 조정 후 안정 가능성이 제시됐다.<br>
+                - 업계는 규제 직후 위축이 ‘역설적 기회’가 될 수 있다고 보고 선별적 청약·계약을 조언한다.<br>
+                - ‘상봉 센트럴 아이파크’는 대책 이전 승인으로 전매제한 1년·대출 규정 종전 적용의 수혜를 본다.<br>
+                - 분양권 1회 전매 가능, 집단·중도금·잔금대출도 기존 규정 적용으로 자금 조달이 유리하다.<br>
+                - 7호선·경의중앙·경춘·KTX·GTX-B(예정) 등 교통과 인근 정비사업 호재가 입지 경쟁력이다.<br>
+                - 오피스텔은 LTV 70% 종전 규제 적용, 무상 옵션과 중도금 무이자 등 혜택이 제공된다.
+            </div>
+        </div>
+
+        <!-- TOP 7 -->
+        <div class="news-item">
+            <div class="rank-badge rank-7">TOP 7</div>
+            <a href="https://www.mk.co.kr/news/realestate/11454703" target="_blank" rel="noopener noreferrer" class="news-title">
+                보증금 걱정 없는 공공지원 민간임대 아파트, ‘이천 신안실크밸리 2차’ 10월 31일 홍보관 개관
+            </a>
+            <div class="news-content">
+                - HUG 보증금 100% 보증을 적용한 공공지원 민간임대로 전세사기·반환위험을 차단한다.<br>
+                - 최대 10년 거주, 임대료 상승률 연 5% 이내로 주거비 예측 가능성을 높였다.<br>
+                - 전세매물 급감·대출 규제 심화 속 전세가율 83.3%인 이천에서 실수요 대안으로 부각된다.<br>
+                - 981세대, 전용 74·78·84㎡ 중심, 다수 4Bay·세대당 1.4대 주차 등 상품성이 강화됐다.<br>
+                - 서울·판교 접근성이 좋은 백사지구 입지와 ‘통학이’ 순환버스 도입으로 생활편의가 개선된다.<br>
+                - 1차 완판 경험의 시공사가 참여해 지역 내 랜드마크 기대감이 반영된다.
+            </div>
+        </div>
+
+        <!-- TOP 8 -->
+        <div class="news-item">
+            <div class="rank-badge rank-8">TOP 8</div>
+            <a href="https://www.mk.co.kr/news/realestate/11454994" target="_blank" rel="noopener noreferrer" class="news-title">
+                “집값 딴동네만 올랐는데 왜 우릴”…노도강, 대출규제에 두번 울었다
+            </a>
+            <div class="news-content">
+                - 서울 전역 LTV 40% 일괄 적용으로 저가 지역의 실수요자 타격이 상대적으로 커졌다.<br>
+                - 마포·성동의 LTV 40% 초과 거래 비중은 46.8%인데, 노원·도봉·강북은 59.35%로 10%p+ 높다.<br>
+                - 올해 집값 상승률이 낮은 노원·강북·도봉(0~1%대)보다 마포·성동은 10~12%대로 대비된다.<br>
+                - LTV 40% 초과 비중 상위는 강북 67.22%·금천 62.15%·성북 62.06%·중랑 61.37%·구로 59.70%였다.<br>
+                - 추경호 의원은 “일률 규제는 형평·실효성을 잃는다”며 맞춤형 금융지원 대책을 촉구했다.
+            </div>
+        </div>
+
+        <!-- TOP 9 -->
+        <div class="news-item">
+            <div class="rank-badge rank-9">TOP 9</div>
+            <a href="https://www.mk.co.kr/news/realestate/11454503" target="_blank" rel="noopener noreferrer" class="news-title">
+                “비규제에 합리적 분양가 책정”…HDC현대산업개발 ‘운정 아이파크 시티’ 공급
+            </a>
+            <div class="news-content">
+                - 규제 강화·분양가 상승 속 비규제·합리적 분양가·대단지로 수요가 이동하는 흐름이 뚜렷하다.<br>
+                - 파주 운정 아이파크 시티는 3250가구(전용 63~197㎡)로 3.3㎡당 1894만원의 가격 경쟁력을 갖췄다.<br>
+                - 전매제한 6개월, 1차 중도금 전 전매 가능(안심전매), 계약금 5%(1차 1000만원)로 초기 부담을 낮췄다.<br>
+                - GTX-A 운정중앙역, 자유로·수도권제2순환로, 평택파주고속도로(예정) 등 교통 수혜가 예상된다.<br>
+                - 파주메디컬클러스터 착공으로 종합병원·바이오단지 등 대규모 개발 호재가 진행 중이다.<br>
+                - 수영장·사우나 등 커뮤니티와 조경 특화로 실거주 만족도와 중장기 가치 상승이 기대된다.
+            </div>
+        </div>
+
+        <!-- TOP 10 -->
+        <div class="news-item">
+            <div class="rank-badge rank-10">TOP 10</div>
+            <a href="https://www.mk.co.kr/news/realestate/11454494" target="_blank" rel="noopener noreferrer" class="news-title">
+                대광건영, ‘회천중앙역 대광로제비앙 그랜드센텀’ 100% 분양완료
+            </a>
+            <div class="news-content">
+                - 양주 회천신도시 ‘회천중앙역 대광로제비앙 그랜드센텀’이 전 가구 계약을 완료했다.<br>
+                - 비규제 지역 반사이익과 분양가상한제가 적용된 4억원대(전용 84㎡) 합리적 분양가가 주효했다.<br>
+                - 단지는 642가구, 지하2층~지상29층 규모로 1호선 회천중앙역(예정)·GTX-C 수혜가 기대된다.<br>
+                - 신도시는 철도·도로·산단·생활편의 인프라 확충으로 완성형 신도시로의 전환이 진행 중이다.<br>
+                - 주담대 한도 내 대출이 가능해 실수요자의 자금부담을 낮췄고, 회사는 성실시공을 약속했다.
+            </div>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Expert Section -->
+    <div class="expert-section">
+        <div class="expert-title">💡 전문가 의견</div>
+        <div class="expert-content">
+            - 국토부는 공적 보증 완화로 정비·PF 자금경색을 풀어 도심공급을 확대하겠다고 밝히는 한편(김규철 실장), 대출·토허 규제가 수요를 급격히 얼려 양극화가 심화되고 있다.<br>
+            - 업계는 강한 규제 직후가 ‘선별적 기회’가 될 수 있다고 보지만, LTV 일률 규제는 저가 지역 실수요자 피해를 키운다는 지적이 커 맞춤형 금융 보완이 요구된다(추경호 의원).<br>
+            - 단기적으로 임대차 불안과 거래 한파가 지속되나, 공공 보증·비규제 지역·기승인 단지로 수요가 이동하며 국지적 회복 국면이 먼저 나타날 가능성이 높다.
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        매일 아침 발송되는 부동산 TOP 10 뉴스레터
+    </div>
+</div>
+</body>
+</html>
