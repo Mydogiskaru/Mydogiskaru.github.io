@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부동산 TOP 10 뉴스(2025-11-06)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #f0f4f8 100%);
+            padding: 30px 16px;
+            min-height: 100vh;
+            color: #1a1a1a;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+            padding: 24px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .logo {
+            font-size: 13px;
+            color: #0066cc;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .title {
+            font-size: 26px;
+            font-weight: 800;
+            color: #1a1a1a;
+            line-height: 1.35;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: #999;
+            margin-top: 6px;
+        }
+
+        .news-grid {
+            display: grid;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .news-item {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            border-left: 4px solid #0066cc;
+        }
+
+        .news-item:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .rank-badge {
+            display: inline-block;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+        }
+
+        .rank-1 { background: linear-gradient(135deg, #ff6b35 0%, #ff5a22 100%); }
+        .rank-2 { background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%); }
+        .rank-3 { background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); }
+        .rank-4 { background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); }
+        .rank-5 { background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); }
+        .rank-6 { background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%); }
+        .rank-7 { background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); }
+        .rank-8 { background: linear-gradient(135deg, #e67e22 0%, #d35400 100%); }
+        .rank-9 { background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%); }
+        .rank-10 { background: linear-gradient(135deg, #7f8c8d 0%, #95a5a6 100%); }
+
+        .news-title {
+            font-size: 17px;
+            font-weight: 800;
+            color: #1a1a1a;
+            line-height: 1.45;
+            margin-bottom: 10px;
+            text-decoration: none;
+            display: block;
+            word-break: keep-all;
+        }
+
+        .news-title:hover {
+            color: #0066cc;
+            text-decoration: underline;
+        }
+
+        .news-content {
+            font-size: 13px;
+            color: #444;
+            line-height: 1.7;
+            margin: 0;
+            white-space: pre-line; /* preserve line breaks from original summary */
+        }
+
+        .divider {
+            height: 1px;
+            background: #f0f0f0;
+            margin: 24px 0;
+        }
+
+        .expert-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 12px;
+            padding: 24px;
+            border-left: 4px solid #0066cc;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .expert-title {
+            font-size: 13px;
+            font-weight: 800;
+            color: #0066cc;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .expert-content {
+            font-size: 13px;
+            color: #333;
+            line-height: 1.8;
+            font-weight: 500;
+            white-space: pre-line;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+            font-size: 11px;
+            color: #999;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 20px 12px;
+            }
+
+            .header {
+                padding: 16px;
+                margin-bottom: 20px;
+            }
+
+            .title {
+                font-size: 22px;
+            }
+
+            .news-item {
+                padding: 16px;
+            }
+
+            .news-title {
+                font-size: 15px;
+            }
+
+            .news-content {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">📰 부동산 뉴스레터</div>
+        <div class="title">&lt;부동산 TOP 10 뉴스(2025-11-06) &gt;</div>
+        <div class="subtitle">오늘의 핵심 부동산 뉴스</div>
+    </div>
+
+    <!-- News Grid -->
+    <div class="news-grid">
+        <!-- TOP 1 -->
+        <div class="news-item">
+            <div class="rank-badge rank-1">TOP 1</div>
+            <a href="https://www.mk.co.kr/news/realestate/11461709" target="_blank" rel="noopener noreferrer" class="news-title">
+                공공재건축 용적률 혜택 … 강남3구·용산 빼고 적용
+            </a>
+            <p class="news-content">
+- 국토부가 9·7 공급대책의 공공정비 용적률 상향을 강남·서초·송파·용산을 제외하고 적용한다고 밝혔다.
+- 도시정비법 개정안과 공공주택특별법 시행령 개정을 통해 공공재개발·재건축·도심복합에 인센티브를 부여한다.
+- 법적상한 용적률은 공공재개발 1.2→1.3배, 공공재건축 1.0→1.3배, 도심복합 1.2→1.4배로 상향된다.
+- 대책 발표 전 인가 사업장과 규제지역은 제외하되, 10·15 이후 규제 확대와 무관하게 기존 대상은 혜택을 유지한다.
+- 10·15 대책으로 서울 전역 규제 우려에 대해 “9·7 당시 제외 4개구 외 지역은 모두 혜택”이라며 오해를 해소했다.
+- 여당 TF가 수도권 공급 확대 자문단을 보강하며 관련 입법·시행령 추진에 속도를 낸다.
+            </p>
+        </div>
+
+        <!-- TOP 2 -->
+        <div class="news-item">
+            <div class="rank-badge rank-2">TOP 2</div>
+            <a href="https://www.mk.co.kr/news/realestate/11461474" target="_blank" rel="noopener noreferrer" class="news-title">
+                ‘장위13’ 신속통합2.0‧재정비촉진사업 규제혁신 적용…오 시장 “사업성 개선방안 총동원
+            </a>
+            <p class="news-content">
+- 2014년 뉴타운 해제 후 표류했던 장위13-1/2가 신속통합기획 2.0과 재촉 규제혁신을 적용받아 재추진된다.
+- 인허가 절차 간소화, 용적률 최대 30% 완화, 상한 용적률 1.2배, 사업성보정계수 등으로 수익성을 높인다.
+- 장위13에서 약 6000가구를 공급해 장위 재촉지구 전체 3만3000호(2032년 목표)에 기여할 전망이다.
+- 오세훈 시장은 “유사 사업지까지 사업성을 최대한 끌어올려 속도를 내겠다”고 밝혔다.
+- 종로5가 효제동 1·2·3구역은 정비구역 지정으로 대규모 복합개발이 가능해져 도심 동측 활력 거점이 기대된다.
+- 주거 도입 시 인센티브로 최대 100% 용적률 보너스를 부여해 도심 주거공급을 유도한다.
+            </p>
+        </div>
+
+        <!-- TOP 3 -->
+        <div class="news-item">
+            <div class="rank-badge rank-3">TOP 3</div>
+            <a href="https://www.mk.co.kr/news/realestate/11461232" target="_blank" rel="noopener noreferrer" class="news-title">
+                이준석 “위법한 10.15대책, 행정소송으로 취소시켜야”
+            </a>
+            <p class="news-content">
+- 이준석 대표가 10·15 대책이 9월 통계를 배제하고 8월 통계를 적용했다며 주택법령 위반을 주장했다.
+- 9월 통계 기준이면 규제 대상이 아니었던 서울 4개구와 경기 4개 지역이 부당 규제를 받았다고 지적했다.
+- 개혁신당은 국토부 장관을 상대로 조정대상지역 지정 처분 취소 소송을 추진한다.
+- 제1소송인단은 중랑·강북·도봉·금천, 의왕, 수원 장안·팔달, 성남 중원 등 8개 지역이다.
+- 제2소송인단은 이번 대책으로 신규 지정된 모든 지역의 소유자를 포함한다.
+- LTV·DTI 제한과 세금 중과 등 재산권 침해를 근거로 국민 참여를 호소했다.
+            </p>
+        </div>
+
+        <!-- TOP 4 -->
+        <div class="news-item">
+            <div class="rank-badge rank-4">TOP 4</div>
+            <a href="https://www.mk.co.kr/news/realestate/11461708" target="_blank" rel="noopener noreferrer" class="news-title">
+                장위13구역' 10년 만에 재추진
+            </a>
+            <p class="news-content">
+- 장위13-1·2구역이 신속통합기획 2.0과 재촉 규제완화 패키지로 10년 만에 속도를 낸다.
+- 2005년 뉴타운 지정→2014년 해제 후 표류했으나, 지난해 신통기획 후보지 선정으로 전환점이 됐다.
+- 용적률 최대 30% 완화, 상한 1.2배, 사업성보정계수 적용으로 사업성 개선이 예상된다.
+- 장위13에서 약 6000가구 공급 시 장위 재촉지구는 2032년까지 3만3000가구가 목표다.
+- 서울시는 효제 1·2·3 재개발도 수정가결해 동북 도심권 정비를 병행 추진 중이다.
+- 절차 간소화와 인센티브로 공급 시차를 줄여 사업 지연 비용을 낮추겠다는 방침이다.
+            </p>
+        </div>
+
+        <!-- TOP 5 -->
+        <div class="news-item">
+            <div class="rank-badge rank-5">TOP 5</div>
+            <a href="https://www.mk.co.kr/news/realestate/11461107" target="_blank" rel="noopener noreferrer" class="news-title">
+                국민 2명 중 1명 “내년 상반기 주택가격 오를 것”
+            </a>
+            <p class="news-content">
+- 부동산R114 조사에서 응답자 52%가 내년 상반기 매매가격 상승을 전망했다(하락 14%, 보합 34%).
+- 상승 이유는 핵심지 아파트 강세(35.37%), 금리 인하 가능성(12.63%), 도심 공급부족(10.9%) 순이다.
+- 하락 이유는 대출규제로 매수 약화(38.16%), 경기침체 가능성(15.94%), 금리 부담(10.63%) 등이다.
+- 전세 상승(57.75%)·월세 상승(60.91%) 전망이 우세하며, 매수 위축과 월세 선호 확대로 압박이 커졌다.
+- 상반기 시장 변수는 규제환경 변화(17.01%), 대외경제 여건(16.8%), 기준금리 경로(14.75%)다.
+- 전국 1458명 온라인 조사, 신뢰수준 95%에 표본오차 ±2.57%p다.
+            </p>
+        </div>
+
+        <!-- TOP 6 -->
+        <div class="news-item">
+            <div class="rank-badge rank-6">TOP 6</div>
+            <a href="https://www.mk.co.kr/news/realestate/11460943" target="_blank" rel="noopener noreferrer" class="news-title">
+                “집값 잡기 전에 실수요자 잡을판”…대단지 아파트 매물 절반 사라졌다
+            </a>
+            <p class="news-content">
+- 10·15 대책과 서울 전역 토허구역 지정 이후 서울 아파트 매물이 7.17만→6.32만건으로 11.9% 급감했다.
+- 마포·성동·광진 -18%, 노·도·강 -13.2% 등 감소폭이 컸고, 강남3구·용산은 -3.8%에 그쳤다.
+- 대단지의 매물이 절반 가까이 줄며 거래절벽이 심화됐고, 매수·매도 모두 관망 중이다.
+- 공급 잠김 속 실수요가 남아 가격은 강보합이며, 상계주공9 전용49㎡는 5억→5.5억원으로 상승했다.
+- 전세→월세 전환이 가속(전세 +1.9% vs 월세 +5.4%)되고, 갭투자 금지·대출규제가 영향으로 지목됐다.
+- 내년 만료 임대주택 2만4267가구도 실거주 의무로 매도 제약, 잠재 공급이 묶인다는 지적이 나왔다.
+            </p>
+        </div>
+
+        <!-- TOP 7 -->
+        <div class="news-item">
+            <div class="rank-badge rank-7">TOP 7</div>
+            <a href="https://www.mk.co.kr/news/realestate/11461374" target="_blank" rel="noopener noreferrer" class="news-title">
+                ‘토허제’ 10·15대책 약발인가?…서울 아파트값 상승세 ‘숨 고르기’
+            </a>
+            <p class="news-content">
+- 부동산원 주간 통계에서 서울 매매가가 +0.19%로 상승은 유지했지만 전주 대비 둔화했다.
+- LTV 70%→40% 하향 등 대출규제로 문의·거래가 줄며 관망세가 확산됐다.
+- 동작·송파 +0.43%, 강동 +0.35% 등 재건축·주요 단지 중심의 국지 상승이 두드러졌다.
+- 성동 0.37→0.29%p, 광진 0.25→0.15%p, 마포·양천·송파·영등포 등도 상승폭이 축소됐다.
+- 전국은 +0.07%, 수도권 +0.13%, 지방 +0.01%로 보합에 가까운 흐름이다.
+- 서울 전세가는 +0.15%로 선호 단지 매물 부족이 두드러졌다고 부동산원은 분석했다.
+            </p>
+        </div>
+
+        <!-- TOP 8 -->
+        <div class="news-item">
+            <div class="rank-badge rank-8">TOP 8</div>
+            <a href="https://www.mk.co.kr/news/realestate/11461587" target="_blank" rel="noopener noreferrer" class="news-title">
+                멈춰섰던 세운4구역, 대법원 판결에 ‘박차’ 기대
+            </a>
+            <p class="news-content">
+- 대법원이 역사문화환경 보존지역 밖 규제조례 삭제의 적법성을 인정해 세운4구역에 탄력이 붙었다.
+- 발굴조사가 종료되고 최고높이 71.9→141.9m로 완화되며 사업성이 개선될 여지가 생겼다.
+- 2004년 정비구역 지정 후 재생정책 전환으로 지연됐고, 2023년 철거 뒤 고도제한이 걸림돌이었다.
+- 국가유산청은 경관 훼손 우려로 높이 규제·유산영향평가를 요구하며 신중론을 유지 중이다.
+- 주민대표 측은 면담을 요청하고 지연 시 법적 책임도 검토하겠다고 밝혔다.
+- 국가유산청은 판결을 존중하며 유네스코 등과 협력해 세계유산 지위 보호 조치를 예고했다.
+            </p>
+        </div>
+
+        <!-- TOP 9 -->
+        <div class="news-item">
+            <div class="rank-badge rank-9">TOP 9</div>
+            <a href="https://www.mk.co.kr/news/realestate/11461834" target="_blank" rel="noopener noreferrer" class="news-title">
+                문화유산과 마천루 ‘공존의 길’ 열렸다…대법 “종묘주변 규제완화 적법” [뉴스&분석]
+            </a>
+            <p class="news-content">
+- 대법원이 서울시의 규제조항 삭제를 합법으로 판단하며 과도한 사유재산·개발권 침해를 지적했다.
+- 세운4구역은 최고높이 141.9m 계획에 힘을 얻었고, ‘왕릉뷰’ 재현 우려 속 절충 해법이 과제로 남았다.
+- 서울시는 100m 밖이라 규제 대상이 아니라는 입장, 국가유산청은 높이 규제·영향평가 필요를 고수한다.
+- 전문가들은 개발이익을 문화유산 가치 제고에 재투자하는 ‘균형 전략’을 주문했다.
+- 도쿄·런던은 유산 인근 고층복합과 공존해 도시경쟁력을 높인 사례로 제시됐다.
+- 김지엽 교수는 “획일 규제보다 유연한 개발로 접근성과 향유를 높여야 한다”고 조언했다.
+            </p>
+        </div>
+
+        <!-- TOP 10 -->
+        <div class="news-item">
+            <div class="rank-badge rank-10">TOP 10</div>
+            <a href="https://www.mk.co.kr/news/realestate/11461592" target="_blank" rel="noopener noreferrer" class="news-title">
+                ‘부동산 삼중고’ 충격에…분양시장서도 ‘똘똘한 한 채’ 경쟁 본격화
+            </a>
+            <p class="news-content">
+- 1~8월 주택 인허가 17만1747가구(-13.7% y/y), 착공 14만851가구(-19.1%)로 공급 위축이 심화됐다.
+- 9월 민간 분양가 3.3㎡당 1948만원(+3.8%), 서울 4547만원(+2.96%)로 공사비 상승이 반영됐다.
+- 전세매물 약 7만건(-31.5% y/y), 전세가율 68.2%로 3년 만의 고점이며 대출규제·입주감소가 복합 작용한다.
+- 수요는 입지·상품성 선별로 쏠림이 심화돼 ‘철산역 자이’ 37.96대1, 중저가 외곽 단지는 미달이 속출했다.
+- 울산도 단지별 온도차가 커 ‘포레나 울산무거’ 10.6대1 vs ‘더폴 우정’ 저조로 양극화가 확인됐다.
+- 하반기 주목 단지로 ‘울산 호수공원 에일린의 뜰’, ‘해링턴 플레이스 명륜역’ 등이 거론된다.
+            </p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Expert Section -->
+    <div class="expert-section">
+        <div class="expert-title">💡 전문가 의견</div>
+        <p class="expert-content">
+- 부동산원과 R114는 10·15 대출·거래 규제로 상승세가 둔화됐지만, 전세 타이트·핵심지 강세로 가격 하방이 제한적이라고 본다.
+- 서울시의 규제완화와 대법 판결로 장위·세운 등 도심 정비가 가속되며 공급절벽 완화 기대가 있으나, 문화유산 보전과의 균형 설계가 관건이다.
+- 현장 중개·임대업계는 토허제·실거주의무가 매물 잠김과 월세화로 번진다고 경고해, 표적 완화와 전월세 안정장치 보완이 요구된다.
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>매일 아침 발송되는 부동산 TOP 10 뉴스레터</p>
+    </div>
+</div>
+</body>
+</html>
