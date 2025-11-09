@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>부동산 TOP 10 뉴스(2025-11-09)</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #f0f4f8 100%);
+            padding: 30px 16px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 32px;
+            padding: 24px;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .logo {
+            font-size: 13px;
+            color: #0066cc;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .title {
+            font-size: 26px;
+            font-weight: 800;
+            color: #1a1a1a;
+            line-height: 1.3;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: #999;
+            margin-top: 6px;
+        }
+
+        .news-grid {
+            display: grid;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .news-item {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s ease;
+            border-left: 4px solid #0066cc;
+        }
+
+        .news-item:hover {
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .rank-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #0066cc 0%, #0052a3 100%);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: 0.5px;
+        }
+
+        .rank-1 { background: linear-gradient(135deg, #ff6b35 0%, #ff5a22 100%); }
+        .rank-2 { background: linear-gradient(135deg, #ffa500 0%, #ff8c00 100%); }
+        .rank-3 { background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%); }
+        .rank-4 { background: linear-gradient(135deg, #9b59b6 0%, #8e44ad 100%); }
+        .rank-5 { background: linear-gradient(135deg, #3498db 0%, #2980b9 100%); }
+        .rank-6 { background: linear-gradient(135deg, #1abc9c 0%, #16a085 100%); }
+        .rank-7 { background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%); }
+        .rank-8 { background: linear-gradient(135deg, #e67e22 0%, #d35400 100%); }
+        .rank-9 { background: linear-gradient(135deg, #34495e 0%, #2c3e50 100%); }
+        .rank-10 { background: linear-gradient(135deg, #7f8c8d 0%, #95a5a6 100%); }
+
+        .news-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1a1a1a;
+            line-height: 1.4;
+            margin-bottom: 10px;
+            text-decoration: none;
+            display: block;
+            word-break: break-word;
+        }
+
+        .news-title:hover {
+            color: #0066cc;
+            text-decoration: underline;
+        }
+
+        .news-content {
+            font-size: 13px;
+            color: #444;
+            line-height: 1.7;
+            margin: 0;
+            white-space: pre-wrap;
+        }
+
+        .divider {
+            height: 1px;
+            background: #f0f0f0;
+            margin: 24px 0;
+        }
+
+        .expert-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 12px;
+            padding: 24px;
+            border-left: 4px solid #0066cc;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .expert-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #0066cc;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .expert-content {
+            font-size: 13px;
+            color: #333;
+            line-height: 1.7;
+            font-weight: 500;
+            white-space: pre-wrap;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 32px;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+            font-size: 11px;
+            color: #999;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 20px 12px;
+            }
+
+            .header {
+                padding: 16px;
+                margin-bottom: 20px;
+            }
+
+            .title {
+                font-size: 22px;
+            }
+
+            .news-item {
+                padding: 16px;
+            }
+
+            .news-title {
+                font-size: 15px;
+            }
+
+            .news-content {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">📰 부동산 뉴스레터</div>
+        <div class="title">부동산 TOP 10 뉴스</div>
+        <div class="subtitle">2025-11-09 · 오늘의 핵심 부동산 이슈</div>
+    </div>
+
+    <!-- News Grid -->
+    <div class="news-grid">
+        <!-- TOP 1 -->
+        <div class="news-item">
+            <div class="rank-badge rank-1">TOP 1</div>
+            <a href="https://www.mk.co.kr/news/realestate/11463137" target="_blank" class="news-title">
+                “내집 마련, 내년 상반기 다주택자 급매 노려라”…5월전에 기회 온다는데
+            </a>
+            <p class="news-content">- 10·15 대책으로 서울·경기 일부가 삼중 규제로 묶이며 거래심리가 급냉했고 단기 활성화는 어렵다는 진단이 많다.
+- 다만 실수요자에겐 급락·급등 없는 관망기인 만큼 매수 타이밍을 분할로 모색하라는 조언이 제시됐다.
+- 다주택자 양도세 중과 유예가 내년 5월 종료 전망이라 그 전에 급매물 출현 가능성이 크다.
+- 조정지역 다주택자 양도세는 기본세율(6~45%)에 2주택+20%p, 3주택+30%p 가산되고 장특공제도 배제된다.
+- 전셋값은 내년 전국 +4%로 매매(+0.8%) 대비 상승압력이 커 실수요의 매수 전환 변수로 지목됐다.
+- 규제 강한 재건축보다 사업 가시성 있는 재개발, 청약·경매 등 ‘허가구역 비적용’ 창구를 병행하되 입지·미래가치 본질에 집중하라는 주문이다.</p>
+        </div>
+
+        <!-- TOP 2 -->
+        <div class="news-item">
+            <div class="rank-badge rank-2">TOP 2</div>
+            <a href="https://www.mk.co.kr/news/realestate/11463490" target="_blank" class="news-title">
+                국토부 장관 고발로 번진 '규제지역 지정 기준' 논란
+            </a>
+            <p class="news-content">- 서울 전역 규제지역 지정 과정에서 9월 가격통계 배제를 둘러싼 의혹이 커지며 김윤덕 장관이 경찰에 고발됐다.
+- 야권은 “직전 3개월 기준이면 7~9월을 적용해야 하고 5개 구는 제외 가능했다”고 주장했다.
+- 국토부는 “주거심의(10/13~14) 당시 공식 공표 통계는 8월뿐이라 9월 사용 근거가 없었다”고 반박했다.
+- 한국부동산원 9월 통계 공표일이 10월 15일로 심의 시점과 어긋났다는 점을 근거로 들었다.
+- 야권은 “확대 방침을 미리 정하고 불리한 데이터는 뺐다”며 정책 신뢰·통계 공정성 문제를 제기했다.
+- 장관은 “추석 전부터 준비한 사안으로 조작 의혹은 사실무근”이라며 법적·절차적 정당성을 강조했다.</p>
+        </div>
+
+        <!-- TOP 3 -->
+        <div class="news-item">
+            <div class="rank-badge rank-3">TOP 3</div>
+            <a href="https://www.mk.co.kr/news/realestate/11463711" target="_blank" class="news-title">
+                “불리한 9월 수치는 왜 뺐나”…통계조작 의혹 국토부장관, 경찰 고발돼
+            </a>
+            <p class="news-content">- 10·15 대책의 서울 전역 규제 지정에 9월 통계 미반영 의혹이 제기돼 김윤덕 장관이 허위공문서·직권남용 혐의로 고발됐다.
+- 정치권은 조정·투기과열 지정기준(직전 3개월 상승률이 물가의 1.3배·1.5배 초과)을 들어 7~9월 반영을 요구했다.
+- 국토부는 “공식 공표 전 통계는 법적 사용 불가”라며 9월 공표일(10/15)과 심의(10/13~14) 시차를 이유로 제시했다.
+- 야권은 “추석 전 확대 방향을 고정하고 결론에 맞게 통계를 선택했다”고 공세를 지속했다.
+- 장관은 예결위에서 “조작은 사실무근”이라 일축했지만 정책 신뢰성 논란은 확산 중이다.
+- 논쟁은 향후 규제 효력·지정 적정성 재검토 요구로 이어질 가능성이 제기된다.</p>
+        </div>
+
+        <!-- TOP 4 -->
+        <div class="news-item">
+            <div class="rank-badge rank-4">TOP 4</div>
+            <a href="https://www.mk.co.kr/news/realestate/11463487" target="_blank" class="news-title">
+                반포 트리니원' 30억 로또 출격
+            </a>
+            <p class="news-content">- 서초 반포 래미안 트리니원 일반분양 506가구(전용 59·84㎡) 청약이 진행되며 역대급 시세차익이 예상된다.
+- 3.3㎡당 8484만원, 전용 59㎡ 21억대·84㎡ 27억대 책정이나 인근 시세는 각각 42.5억·65억 수준이다.
+- 계약금 20%+중도금대출 40% 한도로 내년 6월 전까지 분양가 40% 현금 납부가 필요하다.
+- 10·15 대책 이후 25억 초과 잔금대출은 2억원 한도여서 사실상 ‘현금 부자’ 청약장이 된다.
+- 후분양으로 내년 8월 잔금·6개월 내 입주, 중도금대출 시 전세보증금 활용과 세입자 전세대출이 제한된다.
+- 준공 3년 뒤 실거주의무까지 부과돼 자금계획·거주계획 정밀 수립이 필수다.</p>
+        </div>
+
+        <!-- TOP 5 -->
+        <div class="news-item">
+            <div class="rank-badge rank-5">TOP 5</div>
+            <a href="https://www.mk.co.kr/news/realestate/11463454" target="_blank" class="news-title">
+                “규제 피한 틈새시장”…서울 아파트 경매가 3년 4개월 만에 최고치
+            </a>
+            <p class="news-content">- 10월 전국 아파트 경매 낙찰률 35.6%(+0.7%p), 낙찰가율 87.6%(+0.6%p)로 진행 건수 감소에도 가격경쟁이 강화됐다.
+- 서울은 낙찰률 39.6%로 급락했지만 낙찰가율 102.3%로 3년 4개월 만의 최고치로 ‘가격 강세’가 뚜렷했다.
+- 토지거래허가구역 지정 후 실거주 의무가 없는 경매로 수요가 쏠리며 광진 135.4%, 성동 122.1% 등 핵심지 급등이 주도했다.
+- 경기 역시 낙찰률 43.6%, 낙찰가율 87.3%로 반등했고 분당 105.6%, 하남 102.9% 등 허가구역이 상위권을 형성했다.
+- 인천은 낙찰률 29.7%, 낙찰가율 73.0%로 부진하며 지역 간 양극화가 확대됐다.
+- 울산·부산 등 광역시, 충북·제주 등 일부 도 지역은 재개발·신축 중심으로 낙찰가율이 개선됐다.</p>
+        </div>
+
+        <!-- TOP 6 -->
+        <div class="news-item">
+            <div class="rank-badge rank-6">TOP 6</div>
+            <a href="https://www.mk.co.kr/news/realestate/11463716" target="_blank" class="news-title">
+                ‘1천만원 월세’ 서울에만 207건…5년새 9배 껑충 ‘역대 최대’
+            </a>
+            <p class="news-content">- 올해 서울 월 1000만원 이상 월세가 207건으로 연중 최다이며 2020년 대비 9배 증가했다.
+- 용산·서초·성동·강남에 집중됐고 성동 갤러리아포레 241㎡는 보증금 1억원·월세 4000만원으로 최고가를 기록했다.
+- 고강도 대출 규제와 보유세·관리비 부담 회피 성향이 맞물리며 자산가 수요가 빠르게 확대됐다.
+- 일반 수요층도 대출 제약으로 전세→월세 전환이 가속화되며 ‘월세화’가 구조화되고 있다.
+- 월세 거래 증가는 고가·중가 시장 동시 확대로 임대료 상방 압력을 키우는 모습이다.
+- 연말로 갈수록 초고가 계약의 지역 확산과 거래 누적이 이어질 가능성이 높다.</p>
+        </div>
+
+        <!-- TOP 7 -->
+        <div class="news-item">
+            <div class="rank-badge rank-7">TOP 7</div>
+            <a href="https://www.mk.co.kr/news/realestate/11463489" target="_blank" class="news-title">
+                고액 월세'사는 코인부자 … 세금피하고 유동성 유지
+            </a>
+            <p class="news-content">- 성수 아크로·한남 나인원·여의도 브라이튼 등에서 수천만원대 월세 계약이 연이어 체결됐다.
+- 자산가들은 자금조달 증빙·보유세·규제 리스크를 회피하고 유동성·기회비용 관리를 위해 월세를 선호한다는 분석이다.
+- 양지영 위원은 “영리치의 현금 확보와 규제 회피 니즈가 월세 수요를 키웠다”고 진단했다.
+- 최환석 센터장은 “전세대출 규제로 임차인의 월세 선택이 늘고 임대인도 월세 전환을 선호한다”고 말했다.
+- 그 결과 서울 아파트 월세는 전년 대비 +9.8%, 1~10월 평균 +10%로 통계 작성 이래 최고 상승률을 기록했다.
+- 전월세 전환율 4.26%(2018년 이후 최고)로 월세 부담 증대가 확인되며 임대시장 체질 변화가 가속 중이다.</p>
+        </div>
+
+        <!-- TOP 8 -->
+        <div class="news-item">
+            <div class="rank-badge rank-8">TOP 8</div>
+            <a href="https://www.mk.co.kr/news/realestate/11463486" target="_blank" class="news-title">
+                [분양 NOW] 강남생활권 복정역에 '분상제 알짜' 아파트
+            </a>
+            <p class="news-content">- 성남 수정구 ‘복정역 에피트’(전용 84㎡ 315가구)가 분양가상한제로 11~12억원대 책정이 예상된다.
+- 위례·남위례 유사 평형 대비 3~5억원 저렴해 강남 인접 수요의 관심이 높다.
+- 8호선·분당선 더블역세권에 위례선 트램(내년 하반기)까지 예정돼 접근성이 우수하다.
+- 복정역세권 10조원급 복합개발과 환승센터 복합개발, 포스코 글로벌센터 등 굵직한 개발 호재가 맞물린다.
+- 단지 설계는 남향 위주·3면 발코니(일부)·스쿨스테이션·호텔급 커뮤니티 등 상품성을 강화했다.
+- 복정1지구 내 역세권 최단거리 입지로 실거주·투자가치의 동시 충족을 노린다.</p>
+        </div>
+
+        <!-- TOP 9 -->
+        <div class="news-item">
+            <div class="rank-badge rank-9">TOP 9</div>
+            <a href="https://www.mk.co.kr/news/realestate/11463250" target="_blank" class="news-title">
+                “얼죽신 됐다고 좋아했는데”…실내공기질 권고기준 초과 신축 아파트 수두룩
+            </a>
+            <p class="news-content">- 올해 서울 신축 아파트 44개 단지 중 86.4%가 실내공기질 권고기준을 초과했다.
+- 가구 기준 59.5%가 기준치를 넘었고 임대주택은 15개 단지 100% 초과로 더 심각했다.
+- 톨루엔·라돈 등이 다량 검출됐고 일부는 톨루엔이 기준의 5배(5004㎍/㎥)에 달했다.
+- 건설사 자체 조사와 시 보건환경연구원 조사 간 결과 괴리가 발생해 관리·검증 부실 지적이 나왔다.
+- 현행은 개선조치 ‘권고’ 수준이라 강제력이 부족하고 베이크아웃 가이드라인 이행도 미흡하다는 비판이다.
+- 서울시는 표시·고지 강화 등 후속조치를 예고했지만 법·제도 보완이 시급하다는 지적이 크다.</p>
+        </div>
+
+        <!-- TOP 10 -->
+        <div class="news-item">
+            <div class="rank-badge rank-10">TOP 10</div>
+            <a href="https://www.mk.co.kr/news/realestate/11463580" target="_blank" class="news-title">
+                롯데타워뷰 32층 스카이브리지…잠실 대장주 바뀐다
+            </a>
+            <p class="news-content">- ‘잠실 르엘’이 내년 1월 입주를 앞두고 2600mm 천장고·32층 스카이브리지·미디어 파사드 등 하이엔드 사양을 적용했다.
+- 25m 스테인리스 수영장·10m 천장 체육관·온수풀·스크린골프 등 호텔급 커뮤니티를 갖췄다.
+- 지하 통로로 잠실역 직접 연결, 센트럴파크·수경시설 등 조경·편의도 강화했다.
+- 신축 하이엔드 입지로 잠실 부동산 중심축이 기존 ‘엘리트’에서 잠실역 권역으로 이동할 것이란 전망이 나온다.
+- 분양권 거래는 르엘 84㎡ 40억원, 잠래아 84㎡ 41억원으로 리센츠·엘스 대비 프리미엄을 형성했다.
+- 인근 대단지 재건축(주공5·장미 등) 동시 진행이 ‘대장주 교체’ 흐름을 가속할 변수다.</p>
+        </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- Expert Section -->
+    <div class="expert-section">
+        <div class="expert-title">💡 전문가 의견</div>
+        <p class="expert-content">- 강력한 규제로 단기 거래는 위축되지만, 전셋값 상승·월세화와 함께 내년 5월 전 다주택자 급매가 ‘실수요 기회’로 제시된다.
+- 자금규제 강화로 현금 선호·경매 선호가 뚜렷해지며, 핵심 입지 신축·재개발과 알짜 분양에 수요가 집중되는 ‘양극화’가 지속될 전망이다.
+- 정책 신뢰 논란이 해소되지 않으면 관망세가 길어질 수 있어, 입지·미래가치·현금흐름 중심의 보수적 전략이 유효하다.</p>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>매일 아침 발송되는 부동산 TOP 10 뉴스레터 · 2025-11-09</p>
+    </div>
+</div>
+</body>
+</html>
